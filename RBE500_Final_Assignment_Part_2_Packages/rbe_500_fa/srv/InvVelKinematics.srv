@@ -1,0 +1,11 @@
+float64 q1
+float64 q2
+float64 q3
+float64 v_x
+float64 v_y
+float64 v_z
+float64 w_x
+float64 w_y
+float64 w_z
+---
+float64[] q_dot

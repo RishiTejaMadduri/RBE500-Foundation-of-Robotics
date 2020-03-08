@@ -1,0 +1,18 @@
+<launch>
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find custom_world)/worlds/custom_world.world"/>
+    <!-- <arg name="gui" value="true"/> -->
+    <arg name="paused" value="true"/>
+    <!-- more default parameters can be changed here -->
+  </include>
+  <!-- Spawn a robot into Gazebo -->
+  <param name="robot_description" textfile="$(find custom_robot_description)/urdf/custom_scara.urdf"/>
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find custom_robot_description)/urdf/custom_scara.urdf -urdf -z 0 -model custom_scara" />
+  
+  <include file="$(find custom_controller)/launch/custom_scara_control.launch">
+    <!-- more default parameters can be changed here -->
+  </include>
+  
+  
+</launch>
