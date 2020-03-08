@@ -1,0 +1,8 @@
+float64 q1
+float64 q2
+float64 q3
+float64 q1_dot
+float64 q2_dot
+float64 q3_dot
+---
+float64[] ee_velocity
